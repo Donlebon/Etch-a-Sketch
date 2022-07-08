@@ -53,8 +53,8 @@ header{
 
 
 .frame-container{
-    height: 320px;
-    width: 320px;
+    height: 400px;
+    width: 400px;
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
@@ -63,7 +63,12 @@ header{
 
 
 .frames{
-    background-color: blue;
-    height: 30px;
-    width: 30px;
+    border: 0.7px solid lightgray;
+    height: 25px;
+    width: 25px;
 }
+
+.hoverColor{
+    color: black;
+}
+
