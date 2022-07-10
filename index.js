@@ -1,6 +1,13 @@
 let frameContainer = document.querySelector(".frame-container");
 let allButtons = document.querySelectorAll("button")
 
+let rainbow = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"]
+
+let randomColor = function generateRandomColor(){
+    return Math.floor(Math.random() * rainbow.length)
+}
+
+
 // 320px
 let miniButton = document.querySelector("#mini")
 // 400px
@@ -8,7 +15,7 @@ let mediumButton = document.querySelector("#medium")
 // 480px
 let maxButton = document.querySelector("#max")
 
-let colorButton = document.querySelector("#color")
+let rainbowButton = document.querySelector("#rainbow")
 let surpriseButton = document.querySelector("#Surprise")
 
 function generateGrid(){
@@ -73,6 +80,8 @@ function addClick(value, index){
             changeMaxDimension()
             allFrames.forEach(changeMax)
             allFrames.forEach(resetGrid)
+        } else if (allButtons[index].getAttribute("id") === "rainbow"){
+            allFrames.forEach(colorGrid)
         }
     })
 }
@@ -80,22 +89,32 @@ function addClick(value, index){
 allButtons.forEach(addClick)
 
 
-
 function paintGrid(value, index){
-    allFrames[index].addEventListener("click", function(e){
-        allFrames.forEach(testing)
-        if(e.type === "click"){
-            allFrames[index].style.backgroundColor = "black"
-            console.log(e)
-        }
-    })
-}
-
-function testing(value, index){
     allFrames[index].addEventListener("mouseover", function(e){
         allFrames[index].style.backgroundColor = "black"
     })
 }
 
-allFrames.forEach(paintGrid)
+let rainbowColor = false
 
+function colorGrid(value, index){
+    let rainbow = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"]
+    let randomColor = function generateRandomColor(){
+        return Math.floor(Math.random() * rainbow.length)
+    }
+    if(rainbowColor == false){
+        rainbowButton.textContent = "Rainbow On"
+        allFrames[index].addEventListener("mouseover", function(e){
+            allFrames[index].style.backgroundColor = rainbow[randomColor()]
+            rainbowColor = true
+        })
+    } else if (rainbowColor == true){
+        rainbowButton.textContent = "Rainbow Off"
+        allFrames[index].addEventListener("mouseover", function(e){
+            allFrames[index].style.backgroundColor = "black"
+            rainbowColor = false
+        })
+    }
+}
+
+allFrames.forEach(paintGrid)
