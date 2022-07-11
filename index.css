@@ -53,22 +53,18 @@ header{
 
 
 .frame-container{
-    height: 400px;
-    width: 400px;
+    height: 496px;
+    width: 496px;
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
     margin: auto;
 }
 
-
-.frames{
+.gridColor{
     border: 0.7px solid lightgray;
-    height: 25px;
-    width: 25px;
+    height: 31px;
+    width: 31px;
 }
 
-.hoverColor{
-    color: black;
-}
 
