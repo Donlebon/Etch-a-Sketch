@@ -7,12 +7,15 @@
 body{
     font-family: 'Rubik Moonrocks', sans-serif;
     padding-bottom: 2em;
+    background-color: #FFDEDE;
 }
+
 
 header{
     font-size: 3rem;
     text-align: center;
     margin-top: 0.5em;
+    color: white;
 }
 
 .main-container{
@@ -20,6 +23,7 @@ header{
     height: 500px;
     margin-top: 1em;
     margin: auto;
+    
 }
 
 .buttons{
@@ -32,9 +36,38 @@ header{
 }
 
 .group1{
-    width: 400px;
     margin: auto;
     text-align: center;
+}
+
+/* Button Styling */
+
+.button-style{
+    padding: 0.7em 2em;
+    border-radius: 0.5em;
+    letter-spacing: 1px;
+    border-style: none;
+    font-family: 'Rubik Moonrocks', sans-serif;
+    font-weight: bold;
+    color: #EB4747;
+    background-color: white;
+    cursor: pointer;
+}
+
+.button-style:hover{
+    opacity: 0.7;
+}
+
+.clicked-style{
+    color: white;
+    background-color: #EB4747;
+    transition: 500ms;
+}
+
+.original-style{
+    color: #EB4747;
+    background-color: white;
+    transition: 500ms;
 }
 
 
@@ -43,11 +76,11 @@ header{
     margin-right: 3em;
 }
 
-#color, #surprise{
+#color, #erase{
     margin-top: 1.5em;
 }
 
-#surprise{
+#erase{
     margin-left: 3em;
 }
 
@@ -59,12 +92,23 @@ header{
     flex-wrap: wrap;
     align-items: flex-start;
     margin: auto;
+    background-color: white;
 }
 
-.gridColor{
+.mediumGrid{
+    border: 0.7px solid lightgray;
+    height: 16px;
+    width: 16px;
+}
+
+.miniGrid{
+    border: 0.7px solid lightgray;
+    height: 8px;
+    width: 8px;
+}
+
+.maxGrid{
     border: 0.7px solid lightgray;
     height: 31px;
     width: 31px;
 }
-
-
